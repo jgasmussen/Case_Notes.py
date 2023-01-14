@@ -72,6 +72,8 @@ As pointed out by others, "Case_Notes.py" can also be used for other documentati
 
 That's it! You are now ready to run the script.
 
+Note: For macOS, you may need to give permission to the "Terminal App" in order for it to allow the screenshot functionality to work.  
+
 ## Using Case_Notes.py
 
 First, let's run the Case_Notes.py from the command line with the help flag:
