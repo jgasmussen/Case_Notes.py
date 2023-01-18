@@ -2,7 +2,7 @@
 
 ######################################################
 #                   Case_Notes.py                    #
-#                    Version 1.0                     #
+#                  BETA Version 0.3                  #
 #----------------------------------------------------#
 #           Written by: John G. Asmussen             #
 #          EGA Technology Specialists, LLC.          #
@@ -15,21 +15,11 @@ import sys
 import platform
 from pyautogui import hotkey
 
-log_filename = sys.argv[1]
+log_filename = sys.argv[1] + '.log'
 timestamp1 = str(datetime.datetime.utcnow())
 timestamp2 = str(datetime.datetime.now())
 
-if sys.argv[2] == '--UTC':
-  sys.argv[2] = timestamp1
-
-if sys.argv[2] == '--LocalTime': 
-  sys.argv[2] = timestamp2
-
-def write_log(log):
-  with open(log_filename, 'a') as log_file:
-    log_file.write(sys.argv[2] + "|: " + log + "\n")
-
-if '-h' in sys.argv or '--help' in sys.argv:
+if '-h' in sys.argv[1] or '--help' in sys.argv[1]:
   print("Case_Notes.py: a program for creating a case notes log file complete with UTC date and timestamps.")
   print('\n')
   print("Usage: python3 Case_Notes.py [NAME_OF_LOG_FILE] [DATE_TIMESTAMP_FORMAT]")
@@ -50,6 +40,16 @@ if '-h' in sys.argv or '--help' in sys.argv:
   print('\n')
   print("The latest version of this script can be found here: https://github.com/jgasmussen/Case_Notes.py")
   sys.exit()
+
+if sys.argv[2] == '--UTC':
+  sys.argv[2] = timestamp1
+
+if sys.argv[2] == '--LocalTime': 
+  sys.argv[2] = timestamp2
+
+def write_log(log):
+  with open(log_filename, 'a') as log_file:
+    log_file.write(sys.argv[2] + "|: " + log + "\n")
 
 if os.path.exists(log_filename):
   write_log("=============== USER RESTARTED PROGRAM ===============")
