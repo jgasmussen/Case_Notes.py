@@ -2,7 +2,7 @@
 
 ######################################################
 #                   Case_Notes.py                    #
-#                  BETA Version 0.3                  #
+#                  BETA Version 0.5                  #
 #----------------------------------------------------#
 #           Written by: John G. Asmussen             #
 #          EGA Technology Specialists, LLC.          #
@@ -12,29 +12,37 @@
 import datetime
 import os
 import sys
+import platform
 from pyautogui import hotkey
 
 log_filename = sys.argv[1]
+timestamp1 = str(datetime.datetime.utcnow())
+timestamp2 = str(datetime.datetime.now())
+
+if sys.argv[2] == '--UTC':
+  sys.argv[2] = timestamp1
+
+if sys.argv[2] == '--LocalTime': 
+  sys.argv[2] = timestamp2
 
 def write_log(log):
-  timestamp = str(datetime.datetime.utcnow())
   with open(log_filename, 'a') as log_file:
-    log_file.write(timestamp + "|: " + log + "\n")
+    log_file.write(sys.argv[2] + "|: " + log + "\n")
 
 if '-h' in sys.argv or '--help' in sys.argv:
   print("Case_Notes.py: a program for creating a case notes log file complete with UTC date and timestamps.")
   print('\n')
   print("Usage: python3 Case_Notes.py [NAME_OF_LOG_FILE]")
   print('\n')
-  print("	[--help] or [-h] prints this message.")
+  print(" [--help] or [-h] prints this message.")
   print('\n')
   print("For a new case, the user will be prompted to enter their Name, ID, and a Case Number.")
   print('\n')
   print("The program will drop the user to a persistent prompt where case notes can be entered. There are only two command options to use:")
   print('\n')
-  print(" 	- Enter !s to take a screenshot.")
+  print("   - Enter !s to take a screenshot.")
   print('\n')
-  print(" 	- Enter !q to exit the program.")
+  print("   - Enter !q to exit the program.")
   print('\n')
   print("The latest version of this script can be found here: https://github.com/jgasmussen/Case_Notes.py")
   sys.exit()
@@ -51,16 +59,20 @@ if not os.path.exists(log_filename):
     log_file.write(header)
 
 while True:
-  user_input = input("Enter a note to be logged: (!q to quit)")
+  user_input = input("Enter a note to be logged: (!q to quit) ")
 
   if user_input == '!s':
     write_log("=============== USER TOOK A SCREENSHOT ===============")
-  #Linux
-    #hotkey("shift", "printscreen")
-  #Windows
-    hotkey("win","shift","s")
-  #macOS
-    #hotkey("command","shift","4")
+
+    if platform.system() == 'Linux':
+      hotkey("shift", "printscreen")
+
+    if platform.system() == 'Windows':
+      hotkey("win","shift","s")
+
+    if platform.system() == 'Darwin':
+      hotkey("command","shift","4")
+
     continue
 
   if user_input == '!q':
