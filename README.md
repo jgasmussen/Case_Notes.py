@@ -76,7 +76,7 @@ $ python3 Case_Notes.py --help
 ```
 
 ``` 
-Case_Notes.py: a program for creating a case notes log file complete with UTC date and timestamps.
+Case_Notes.py: a program for creating a case notes log file complete with date and timestamps.
 
 
 Usage: python3 Case_Notes.py [NAME_OF_LOG_FILE] [DATE_TIMESTAMP_FORMAT]
