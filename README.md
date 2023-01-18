@@ -4,16 +4,18 @@
 
 Case_Notes.py is easy to setup and use!
 
-A simple python script that keeps your forensic case notes organized all in one place complete with a running UTC date and timestamp for each entry.
+A simple python script that keeps your forensic case notes organized all in one place complete with a running date and timestamp for each entry.
 
-### NEW - Case_Notes.py now has a screenshot shortcut capability! 
+### NEW in VERSION 1.0 - Case_Notes.py now has a screenshot shortcut capability! 
 - Case_Notes.py uses the OS's native keyboard shortcut, allowing the user to "click and drag" a specific area of the screen.
 - Faster screenshots resulting in cleaner and easier to read screenshots of key pieces of evidence.
+- Automatic OS detection for screenshot shortcuts. 
+- Users can specify the Date/Timestamp in either UTC or local time. 
 
-
-As pointed out by others, "Case_Notes.py" can also be used for other documentation purposes: 
+As pointed out by other users, "Case_Notes.py" can also be used for other documentation purposes: 
 - Open Source Intelligence (OSINT) investigations.
 - Social Media Intelligence (SOCMINT) investigations.
+- Notes during penetration tests.
 - Capture the Flag (CTF) events. 
 - General note taking.
 - And so much more!
@@ -52,23 +54,13 @@ As pointed out by others, "Case_Notes.py" can also be used for other documentati
   $ git clone https://github.com/jgasmussen/Case_Notes.py
   ```
 
-5. By default, the script is setup for a Windows operating system. If you are running macOS or Linux, you will need to edit the Case_Notes.py script for your Operating System:
-
-  ```
-  $ nano Case_Notes.py
-  ```
-
-6. For Linux delete the "#" symbol at the beginning of line 48, and add a "#" symbol to the beginning of line 50.
-
-7. For macOS delete the "#" symbol at the beginning of line 52, and add a "#" symbol to the beginning of line 50.
-
-8. Finally, we need to make the script exectuable. For macOS and Linux run:
+5. Finally, we need to make the script exectuable. For macOS and Linux run:
 
   ```
   $ chmod +x Case_Notes.py
   ```
 
-9. In Windows, right click on the python script and select "Properties." Click the check box "Unblock" to allow it to run.
+6. In Windows, right click on the python script and select "Properties." Click the check box "Unblock" to allow it to run.
 
 That's it! You are now ready to run the script.
 
@@ -86,10 +78,16 @@ $ python3 Case_Notes.py --help
 Case_Notes.py: a program for creating a case notes log file complete with UTC date and timestamps.
 
 
-Usage: python3 Case_Notes.py [NAME_OF_LOG_FILE]
+Usage: python3 Case_Notes.py [NAME_OF_LOG_FILE] [DATE_TIMESTAMP_FORMAT]
 
 
-        [--help] or [-h] prints this message.
+ [--help] or [-h] prints this message.
+
+
+ [--UTC] specifies the UTC date/timestamp for the log file.
+
+
+ [--LocalTime] specifies the Local Time date/timestamp for the log file.
 
 
 For a new case, the user will be prompted to enter their Name, ID, and a Case Number.
@@ -98,23 +96,24 @@ For a new case, the user will be prompted to enter their Name, ID, and a Case Nu
 The program will drop the user to a persistent prompt where case notes can be entered. There are only two command options to use:
 
 
-        - Enter !s to take a screenshot.
+   - Enter !s to take a screenshot.
 
 
-        - Enter !q to exit the program.
+   - Enter !q to exit the program.
 
 
 The latest version of this script can be found here: https://github.com/jgasmussen/Case_Notes.py
+
 ```
 
 
 ## To run the program, use the following command:
 
 ```
-$ python3 Case_Notes.py case_notes.log
+$ python3 Case_Notes.py case_notes.log --UTC
 ```
 
-You can replace "case_notes.log" with any filename you want.
+You can replace "case_notes" with any filename you want.
 
 If this is a new case, the first thing the program will do is prompt you to enter your Name, ID number, and a Case number. This information will be printed in the header of the newly created case log file.
 
@@ -129,9 +128,10 @@ This will make a timestamped entry into the log file indiciating the User Quit t
 If you need to restart the investigation in the future, simply rerun the command:
 
 ```
-$ python3 Case_Notes.py case_notes.log
+$ python3 Case_Notes.py case_notes.log --UTC
 ```
 
-Re-running the command will re-start the program where you left off and also log an entry into the log file that the user restarted the program. 
+Re-running the command will re-start the program where you left off and also log an entry into the log file that the user restarted the program.
+
 
 That's it! If you have any ideas of features you would like added or modifications to the existing code that you want to see implementd please let me know.
