@@ -135,4 +135,4 @@ $ python3 Case_Notes.py case_notes --UTC
 Re-running the command will re-start the program where you left off and also log an entry into the log file that the user restarted the program.
 
 
-That's it! If you have any ideas of features you would like added or modifications to the existing code that you want to see implementd please let me know.
+That's it! If you have any ideas of features you would like added or modifications to the existing code that you want to see implemented please let me know.
