@@ -1,6 +1,6 @@
 # Case_Notes.py
 
-## Case_Notes.py is a cross-platform (Windows, macOS, & Linux) python script to help make the documentation process of the forensic examination easier.
+## Case_Notes.py is a cross-platform (Windows, macOS, & Linux) python script to help make the documentation process easier.
 
 Case_Notes.py is easy to setup and use!
 
