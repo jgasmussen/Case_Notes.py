@@ -123,7 +123,7 @@ Pressing return will write the data to the log file.
 Pressing "!s" will activate your OS's keyboard combination to take a selected screenshot. Using the mouse cursor, left click and drag to highlight an area of the screen and select it for a screenshot. Save the screenshot to the same directory as your case log file. 
 For everytime you push "!s" the log file also includes an entry with the date/timestamp showing you took a screenshot.
 
-Whenever you are finished (either for the day or for the case is complete) you exit the program using the "!q" command.
+Whenever you are finished (either for the day or if the case is complete) you exit the program using the "!q" command.
 This will make a timestamped entry into the log file indiciating the User Quit the Program.
 
 If you need to restart the investigation in the future, simply rerun the command:
