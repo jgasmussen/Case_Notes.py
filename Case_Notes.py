@@ -2,7 +2,7 @@
 
 ######################################################
 #                   Case_Notes.py                    #
-#                  BETA Version 0.5                  #
+#                    Version 1.0                     #
 #----------------------------------------------------#
 #           Written by: John G. Asmussen             #
 #          EGA Technology Specialists, LLC.          #
@@ -32,9 +32,13 @@ def write_log(log):
 if '-h' in sys.argv or '--help' in sys.argv:
   print("Case_Notes.py: a program for creating a case notes log file complete with UTC date and timestamps.")
   print('\n')
-  print("Usage: python3 Case_Notes.py [NAME_OF_LOG_FILE]")
+  print("Usage: python3 Case_Notes.py [NAME_OF_LOG_FILE] [DATE_TIMESTAMP_FORMAT]")
   print('\n')
   print(" [--help] or [-h] prints this message.")
+  print('\n')
+  print(" [--UTC] specifies the UTC date/timestamp for the log file.")
+  print('\n')
+  print(" [--LocalTime] specifies the Local Time date/timestamp for the log file.")
   print('\n')
   print("For a new case, the user will be prompted to enter their Name, ID, and a Case Number.")
   print('\n')
