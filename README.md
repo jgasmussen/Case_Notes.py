@@ -10,13 +10,13 @@ A simple python script that keeps your forensic case notes organized all in one 
 - Case_Notes.py now uses the "argparse" module to take user input (options/flags) in a keyword format instead of a positional input using "sys.argv[n]".
 - This allows for a better user experience, with less opportunities for a syntax error, and cleaned up some other code issues.
 
-### NEW in VERSION 1.0 - Case_Notes.py now has a screenshot shortcut capability! 
+NEW in VERSION 1.0 - Case_Notes.py now has a screenshot shortcut capability! 
 - Case_Notes.py uses the OS's native keyboard shortcut, allowing the user to "click and drag" a specific area of the screen.
 - Faster screenshots resulting in cleaner and easier to read screenshots of key pieces of evidence.
 - Automatic OS detection for screenshot shortcuts. 
 - Users can specify the Date/Timestamp in either UTC or local time. 
 
-### As pointed out by other users, "Case_Notes.py" can also be used for other documentation purposes: 
+As pointed out by other users, "Case_Notes.py" can also be used for other documentation purposes: 
 - Open Source Intelligence (OSINT) investigations.
 - Social Media Intelligence (SOCMINT) investigations.
 - Notes during penetration tests.
