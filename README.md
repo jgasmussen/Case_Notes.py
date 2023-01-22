@@ -1,10 +1,14 @@
 # Case_Notes.py
 
-## Case_Notes.py is a cross-platform (Windows, macOS, & Linux) python script to help make the documentation process easier.
+## Case_Notes.py is a cross-platform (Windows, macOS, & Linux) python script to help make the documentation process of the forensic examination easier.
 
 Case_Notes.py is easy to setup and use!
 
 A simple python script that keeps your forensic case notes organized all in one place complete with a running date and timestamp for each entry.
+
+### New in VERSION 1.1
+- Case_Notes.py now uses the "argparse" module to take user input (options/flags) in a keyword format instead of a positional input using "sys.argv[n]".
+- This allows for a better user experience, with less opportunities for a syntax error, and cleaned up some other code issues.
 
 ### NEW in VERSION 1.0 - Case_Notes.py now has a screenshot shortcut capability! 
 - Case_Notes.py uses the OS's native keyboard shortcut, allowing the user to "click and drag" a specific area of the screen.
@@ -12,7 +16,7 @@ A simple python script that keeps your forensic case notes organized all in one 
 - Automatic OS detection for screenshot shortcuts. 
 - Users can specify the Date/Timestamp in either UTC or local time. 
 
-As pointed out by other users, "Case_Notes.py" can also be used for other documentation purposes: 
+### As pointed out by other users, "Case_Notes.py" can also be used for other documentation purposes: 
 - Open Source Intelligence (OSINT) investigations.
 - Social Media Intelligence (SOCMINT) investigations.
 - Notes during penetration tests.
@@ -69,54 +73,33 @@ Note: For macOS, you may need to give permission to the "Terminal App" in order 
 
 ## Using Case_Notes.py
 
-First, let's run the Case_Notes.py from the command line with the help flag:
+First, let's run the Case_Notes.py from the command line with the help flag (-h / --help):
 
 ```
 $ python3 Case_Notes.py --help
-```
+usage: Case_Notes2.py [-h] -f  -t
 
-``` 
-Case_Notes.py: a program for creating a case notes log file complete with date and timestamps.
+Case_Notes.py is a cross-platform (Windows, macOS, & Linux) python script to help make the documentation process easier.
 
-
-Usage: python3 Case_Notes.py [NAME_OF_LOG_FILE] [DATE_TIMESTAMP_FORMAT]
-
-
- [--help] or [-h] prints this message.
-
-
- [--UTC] specifies the UTC date/timestamp for the log file.
-
-
- [--LocalTime] specifies the Local Time date/timestamp for the log file.
-
-
-For a new case, the user will be prompted to enter their Name, ID, and a Case Number.
-
-
-The program will drop the user to a persistent prompt where case notes can be entered. There are only two command options to use:
-
-
-   - Enter !s to take a screenshot.
-
-
-   - Enter !q to exit the program.
-
+options:
+  -h, --help       show this help message and exit
+  -f, --filename   user specified name of the log file.
+  -t, --time       log file date/time format - must choose either 'UTC' or 'localtime'.
 
 The latest version of this script can be found here: https://github.com/jgasmussen/Case_Notes.py
-
+                                                                                                 
 ```
 
 
 ## To run the program, use the following command:
 
 ```
-$ python3 Case_Notes.py case_notes --UTC
+$ python3 Case_Notes.py -f case_notes -t UTC
 ```
 
 You can replace "case_notes" with any filename you want. The script will automatically append ".log" to the filename.
 
-If this is a new case, the first thing the program will do is prompt you to enter your Name, ID number, and a Case number. This information will be printed in the header of the newly created case log file.
+If this is a new case, the first thing the program will do is prompt you to enter your Agency/Company, Name, ID number, and a Case number. This information will be printed in the header of the newly created case log file.
 
 The program will then continue and leave you at a persistent prompt where you can type your notes as needed. 
 Pressing return will write the data to the log file.
@@ -129,7 +112,7 @@ This will make a timestamped entry into the log file indiciating the User Quit t
 If you need to restart the investigation in the future, simply rerun the command:
 
 ```
-$ python3 Case_Notes.py case_notes --UTC
+$ python3 Case_Notes.py -f case_notes -t UTC
 ```
 
 Re-running the command will re-start the program where you left off and also log an entry into the log file that the user restarted the program.
