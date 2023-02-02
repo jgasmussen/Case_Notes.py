@@ -6,6 +6,9 @@ Case_Notes.py is easy to setup and use!
 
 A simple python script that keeps your forensic case notes organized all in one place complete with a running date and timestamp for each entry.
 
+![]
+(https://github.com/jgasmussen/Case_Notes.py/Case_Notes.gif)
+
 ### New in VERSION 1.1
 - Case_Notes.py now uses the "argparse" module to take user input (options/flags) in a keyword format instead of a positional input using "sys.argv[n]".
 - This allows for a better user experience, with less opportunities for a syntax error, and cleaned up some other code issues.
