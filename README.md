@@ -8,11 +8,15 @@ A simple python script that keeps your forensic case notes organized all in one 
 
 ![Case_Notes](https://github.com/jgasmussen/Case_Notes.py/blob/main/Case_Notes.gif)
 
-### New in VERSION 1.1
+### New in VERSION 1.2
+- Case_Notes.py has been refactored and updated with a new "multiline" entry option - '!m". By using the multiline entry option several lines can be entered under one timestamp. To end the multiline entry mode, simply type 'done'. Thank you to "Pir00t" (https://github.com/Pir00t) for his contributions to this project!
+- Case_Notes.py also has been converted to a stand-alone Windows executable using "auto-py-to-exe" and will be added to the repository. 
+
+### VERSION 1.1
 - Case_Notes.py now uses the "argparse" module to take user input (options/flags) in a keyword format instead of a positional input using "sys.argv[n]".
 - This allows for a better user experience, with less opportunities for a syntax error, and cleaned up some other code issues.
 
-### NEW in VERSION 1.0 - Case_Notes.py now has a screenshot shortcut capability! 
+### VERSION 1.0 - Case_Notes.py now has a screenshot shortcut capability! 
 - Case_Notes.py uses the OS's native keyboard shortcut, allowing the user to "click and drag" a specific area of the screen.
 - Faster screenshots resulting in cleaner and easier to read screenshots of key pieces of evidence.
 - Automatic OS detection for screenshot shortcuts. 
