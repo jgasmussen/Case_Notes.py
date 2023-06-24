@@ -2,12 +2,14 @@
 
 ######################################################
 #                   Case_Notes.py                    #
-#                    Version 1.1                     #
+#                    Version 1.2                     #
 #----------------------------------------------------#
 #           Written by: John G. Asmussen             #
 #          EGA Technology Specialists, LLC.          #
 #                   GNU GPL v 3.0                    #
 ######################################################
+
+# A big thank you to "Pir00t" (https://github.com/Pir00t) for his contributions to this project!
 
 import argparse
 import datetime
